@@ -3,6 +3,8 @@
 #set page(
   paper: "a4",
   margin: (x: 2cm, y: 2.5cm),
+  numbering: "1",
+  number-align: right + bottom,
 )
 
 #set text(
