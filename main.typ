@@ -19,25 +19,21 @@
 #show "——": box(width: 2em, scale(x: 200%, origin: left, "—"))
 #set list(marker: [▪])
 
-// 段落设置：两端对齐，行距拉开，首行缩进2字符
 #set par(
   justify: true,
   leading: 0.75em,
   first-line-indent: (amount: 2em, all: true)
 )
 
-// 避免列表也被首行缩进影响排版
 #show list: set par(first-line-indent: 0em)
 #show enum: set par(first-line-indent: 0em)
 
-// 一级标题样式（作为文章大标题）
 #show heading.where(level: 1): it => {
   set align(center)
   set text(size: 22pt, weight: "bold", font: ("Linux Libertine", "Noto Sans CJK SC"))
   it.body
 }
 
-// 其他级别标题样式
 #show heading: it => {
   if it.level > 1 {
     set text(weight: "bold", font: ("Linux Libertine", "Noto Sans CJK SC"))
@@ -49,7 +45,6 @@
   }
 }
 
-// 引用块样式：左侧增加缩进，并使用深灰色区分
 #show quote: it => {
   set text(fill: luma(50), font: ("Linux Libertine", "Noto Serif CJK SC"))
   set par(first-line-indent: 0em) 
